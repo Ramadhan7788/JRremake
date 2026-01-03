@@ -1,0 +1,8 @@
+@use "../variables" as v;
+
+body.theme-light {
+    --ui-bg: #{v.$ui-bg-light};
+    --ui-text: #{v.$ui-text-light};
+    --jg-bg: #{v.$ui-bg-light};
+    --jg-foreground: #{v.$ui-text-light};
+}

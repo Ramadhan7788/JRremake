@@ -1,0 +1,10 @@
+@use "../variables" as v;
+
+body.theme-jr {
+    --brand-primary: #e53935;
+    --brand-bg: #ffffff;
+
+    --navbar-bg: var(--brand-primary);
+    --sidebar-bg: #f7f7f7;
+    --footer-bg: #1e1e1e;
+}

@@ -1,0 +1,48 @@
+{% load static %}
+
+<nav class="jr-navbar">
+    <div class="container-fluid jr-navbar__inner">
+
+        <!-- Sidebar Toggle -->
+        <button
+            type="button"
+            class="jr-navbar__toggle js-sidebar-toggle"
+            aria-label="Toggle sidebar"
+            aria-expanded="false"
+            aria-controls="jr-sidebar"
+        >
+            <span class="jr-navbar__hamburger">
+                <span class="jr-navbar__bar"></span>
+                <span class="jr-navbar__bar"></span>
+                <span class="jr-navbar__bar"></span>
+            </span>
+            <span class="visually-hidden">Toggle navigation</span>
+        </button>
+
+        <!-- Brand -->
+        <a href="#" class="jr-navbar__brand">
+            <img
+                src="{% static 'svg/logo.svg' %}"
+                alt="JR"
+                class="jr-navbar__logo"
+            >
+        </a>
+
+        <!-- Social Links -->
+        <div class="jr-navbar__social">
+            <a href="#" class="jr-navbar__social-link">
+                <img src="{% static 'svg/facebook.svg' %}" alt="Facebook">
+            </a>
+            <a href="#" class="jr-navbar__social-link">
+                <img src="{% static 'svg/instagram.svg' %}" alt="Instagram">
+            </a>
+            <a href="#" class="jr-navbar__social-link">
+                <img src="{% static 'svg/tiktok.svg' %}" alt="TikTok">
+            </a>
+            <a href="#" class="jr-navbar__social-link">
+                <img src="{% static 'svg/youtube.svg' %}" alt="YouTube">
+            </a>
+        </div>
+
+    </div>
+</nav>

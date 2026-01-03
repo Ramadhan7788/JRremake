@@ -1,0 +1,46 @@
+{% load static %}
+
+<script src="{% static 'bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebar   = document.getElementById('jr-sidebar');
+  const toggleBtn = document.querySelector('.js-sidebar-toggle');
+  const content   = document.querySelector('.jr-content');
+
+  if (!sidebar || !toggleBtn || !content) return;
+
+  const openSidebar = () => {
+    sidebar.classList.add('is-open');
+    content.classList.add('has-sidebar-open');
+
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    toggleBtn.classList.add('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  };
+
+  const closeSidebar = () => {
+    sidebar.classList.remove('is-open');
+    content.classList.remove('has-sidebar-open');
+
+    toggleBtn.classList.remove('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  toggleBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    sidebar.classList.contains('is-open')
+      ? closeSidebar()
+      : openSidebar();
+  });
+
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeSidebar();
+  });
+});
+
+</script>

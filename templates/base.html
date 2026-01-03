@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id-ID">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>{% block title %}Jina GUI{% endblock %}</title>
+
+    {# Global & Brand Styles #}
+    {% include "snippets/styles.html" %}
+</head>
+
+<body id="jg" class="jg-body {% block body_class %}theme-jr theme-dark{% endblock %}">
+    <!-- Global Layout Wrapper -->
+    <div id="jg-layout" class="jg-layout">
+
+        <!-- Sidebar (Brand Component) -->
+        {% include "snippets/sidebar.html" %}
+
+        <!-- Main Content Area -->
+        <div id="jr-content" class="jr-content">
+
+            <!-- Navbar (Brand Component) -->
+            {% include "snippets/navbar.html" %}
+
+            <!-- Page Content -->
+            <main id="jg-main" class="jg-main" role="main">
+                <div class="container-fluid jg-container">
+                    {% block content %}{% endblock %}
+                </div>
+            </main>
+
+            <!-- Footer (Brand Component) -->
+            {% include "snippets/footer.html" %}
+        </div>
+    </div>
+
+    {# Global & Brand Scripts #}
+    {% include "snippets/scripts.html" %}
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

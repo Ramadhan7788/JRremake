@@ -1,0 +1,105 @@
+@use "variables" as v;
+
+$footer-bg: v.$footer-bg;
+$footer-bottom-bg: v.$footer-bottom-bg;
+$footer-text: v.$footer-text;
+$footer-heading: v.$footer-heading;
+$footer-accent: v.$footer-accent;
+$transition-speed: v.$transition-speed;
+
+.site-footer {
+  background-color: $footer-bg;
+  color: $footer-text;
+  padding-top: 3rem;
+  font-family: sans-serif;
+
+  &__top {
+    padding-bottom: 2rem;
+  }
+
+  &__column {
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    color: $footer-heading;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+
+    // Garis bawah kecil untuk estetika
+    &::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background-color: $footer-accent;
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+
+    i {
+      color: $footer-accent;
+    }
+  }
+
+  &__link {
+    color: $footer-text;
+    text-decoration: none;
+    transition: color $transition-speed ease;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+
+    &:hover {
+      color: $footer-accent;
+      transform: translateX(5px);
+    }
+  }
+
+  &__social {
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: $footer-heading;
+      border-radius: 50%;
+      margin-right: 10px;
+      font-size: 1.2rem;
+      transition: all $transition-speed ease;
+
+      &:hover {
+        background-color: $footer-accent;
+        color: white;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: $footer-bottom-bg;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    small {
+      opacity: 0.7;
+    }
+  }
+}

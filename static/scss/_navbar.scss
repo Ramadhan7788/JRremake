@@ -1,0 +1,139 @@
+@use "variables" as v;
+
+// ======================================
+// Variables
+// ======================================
+$navbar-bg: v.$navbar-bg;
+$icon-mobile: v.$navbar-icon-size-mobile;
+$icon-desktop: v.$navbar-icon-size-desktop;
+$ham-color: v.$hamburger-color;
+$ham-hover: v.$hamburger-bg-hover;
+
+/* ======================================
+   Navbar
+====================================== */
+.jr-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+
+  height: v.$navbar-height;
+  background-color: $navbar-bg;
+  padding: 0.5rem 1rem;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Brand */
+  &__brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__logo {
+    height: 25px;
+    filter: brightness(0) invert(1);
+
+    @media (min-width: 768px) {
+      height: 35px;
+    }
+  }
+
+  /* Social */
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__social-link {
+    display: flex;
+    padding: 0;
+    transition: transform 0.2s ease;
+
+    img {
+      width: $icon-mobile;
+      height: $icon-mobile;
+      filter: brightness(0) invert(1);
+
+      @media (min-width: 768px) {
+        width: $icon-desktop;
+        height: $icon-desktop;
+      }
+    }
+
+    &:hover {
+      transform: scale(0.92);
+
+      img {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+/* ======================================
+   Sidebar Toggle / Hamburger
+====================================== */
+.jr-navbar__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+  margin-right: 0.5rem;
+
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: background-color 0.25s ease;
+  transform: scale(0.85);
+
+  &:hover {
+    background-color: $ham-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+      outline-offset: 2px;
+  }
+}
+
+/* Hamburger Icon */
+.jr-navbar__hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Shared bar */
+.jr-navbar__bar {
+  width: 24px;
+  height: 3px;
+  background-color: $ham-color;
+  border-radius: 30px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+/* Active = X icon */
+.jr-navbar__toggle.is-active {
+  background-color: $ham-hover;
+
+  .jr-navbar__bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .jr-navbar__bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .jr-navbar__bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}

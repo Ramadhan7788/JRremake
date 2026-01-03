@@ -1,0 +1,40 @@
+{% load static %}
+
+<aside class="jr-sidebar" id="jr-sidebar">
+
+    <!-- Sidebar Header / Logo -->
+    <div class="jr-sidebar__header">
+      <a href="/" class="jr-sidebar__brand">
+        <img
+          src="{% static 'svg/logo.svg' %}"
+          alt="Jagat Review"
+          class="jr-sidebar__logo"
+        >
+        <h1 class="jr-sidebar__title">Jagat Review</h1>
+      </a>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="jr-sidebar__nav">
+        <ul class="nav nav-pills flex-column app-sidebar__menu">
+
+            <li class="nav-item jr-sidebar__item">
+                <a href="#"
+                   class="nav-link jr-sidebar__link is-active">
+                    <i class="bi bi-house-door jr-sidebar__icon"></i>
+                    <span class="jr-sidebar__text">Dashboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item jr-sidebar__item">
+                <a href="#"
+                   class="nav-link jr-sidebar__link">
+                    <i class="bi bi-person jr-sidebar__icon"></i>
+                    <span class="jr-sidebar__text">Profil</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+</aside>

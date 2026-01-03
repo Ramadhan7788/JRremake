@@ -1,0 +1,8 @@
+@use "../variables" as v;
+
+body.theme-dark {
+    --ui-bg: #{v.$ui-bg-dark};
+    --ui-text: #{v.$ui-text-dark};
+    --jg-bg: #{v.$ui-bg-dark};
+    --jg-foreground: #{v.$ui-text-dark};
+}

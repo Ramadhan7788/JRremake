@@ -1,0 +1,13 @@
+@use "variables";
+
+@use "base/base";
+@use "themes/brand-jr";
+@use "themes/ui-light";
+@use "themes/ui-dark";
+
+@use "layout/layout";
+
+/* Additional global styles can be added here */
+@use "navbar";
+@use "sidebar";
+@use "footer";
